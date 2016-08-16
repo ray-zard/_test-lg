@@ -17,6 +17,14 @@
   },
   "homepage": "https://github.com/ray-zard/_test-lg#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9",
+    "rimraf": "^2.5.4"
   }
 }
