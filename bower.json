@@ -1,0 +1,17 @@
+{
+  "name": "test-lg",
+  "authors": [
+    "RayZard <ray-zard@mail.ru>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
