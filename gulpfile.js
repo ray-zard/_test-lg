@@ -58,3 +58,38 @@ gulp.task('js:build', function () {
 		.pipe (gulp.dest(path.build.js))
 		.pipe (reload({stream: true}));
 });
+
+gulp.task('style:build', function () {
+	gulp.src(path.src.style)
+		.pipe (sourceMaps.init())
+		.pipe (sass())
+		.pipe (preFixer())
+		.pipe (cssMin())
+		.pipe (sourceMaps.write())
+		.pipe (gulp.dest(path.build.css))
+		.pipe (reload({stream: true}));
+});
+
+gulp.task('build', [
+	'html:build',
+	'js:build',
+	'style:build',
+]);
+
+gulp.task('watch', function () {
+	watch([path.watch.js], function (ev, callback) {
+		gulp.start('js:build');
+	});
+	watch([path.watch.html], function (ev, callback) {
+		gulp.start('html:build');
+	});
+	watch([path.watch.style], function (ec, callback) {
+		gulp.start('style:build');
+	});
+});
+
+gulp.task('clean', function (callback) {
+	rimRaf(path.clean, callback);
+});
+
+gulp.task('default', ['build', 'webserver', 'watch']);
