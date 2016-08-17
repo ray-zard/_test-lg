@@ -52,9 +52,9 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
 	gulp.src(path.src.js)
 		.pipe (rigger())
-		.pipe (sourcemaps.init())
+		.pipe (sourceMaps.init())
 		.pipe (uglify())
-		.pipe (sourcemaps.write())
+		.pipe (sourceMaps.write())
 		.pipe (gulp.dest(path.build.js))
 		.pipe (reload({stream: true}));
 });
